@@ -32,7 +32,13 @@
             <div class="panel panel-info">
                 <div class="panel-heading">Prijavi se</div>
                 <div class="panel-body">
-		<form>
+                    <?php
+                    if(isset($_SET['run']) && $_SET['run']=="failed");
+                    {
+                        echo"Your email or password is not corrct";
+                    }
+                    ?>
+                    <form action="signin_sub.php" method="post">
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" name="e" id="email" placeholder="Unesi mail">
@@ -61,7 +67,7 @@
                         }
                     
                     ?>
-                    <form method="post"action="singup_sub.php" enctype="multipart/form-data">
+                    <form method="post"action="signup_sub.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Ime:</label>
                         <input type="name" class="form-control" name="n" id="name" placeholder="Unesi ime">
