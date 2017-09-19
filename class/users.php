@@ -7,6 +7,8 @@ class users{
     public $pass="";
     public $db_name="quiz_oops";
     public $conn;
+    public $data;
+    public $cat;
     
     public function __construct()
     {
@@ -37,6 +39,26 @@ class users{
         }
             
         }
+    public function users_profile($email)
+    {
+        $query=$this->conn->query("SELECT * FROM signup WHERE email='$email'");
+        $row=$query->fetch_array(MYSQLI_ASSOC);
+        if ($query->num_rows>0)
+        {
+            $this->data[]=$row;
+        }
+        return $this->data;
+    }
+    
+    public function cat_shows()
+    {
+        $query=$this->conn->query("SELECT * FROM category");
+        while($row=$query->fetch_array(MYSQLI_ASSOC))
+        {
+            $this->cat[]=$row;
+        }
+        return $this->cat;
+    }
     public function url($url)
        {
         header("location:".$url);
