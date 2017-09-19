@@ -33,7 +33,7 @@
                 <div class="panel-heading">Prijavi se</div>
                 <div class="panel-body">
                     <?php
-                    if(isset($_SET['run']) && $_SET['run']=="failed");
+                    if(isset($_GET['run']) && $_GET['run']=="failed");
                     {
                         echo"Your email or password is not corrct";
                     }
@@ -67,7 +67,7 @@
                         }
                     
                     ?>
-                    <form method="post"action="signup_sub.php" enctype="multipart/form-data">
+                    <form method="post" action="signup_sub.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Ime:</label>
                         <input type="name" class="form-control" name="n" id="name" placeholder="Unesi ime">
