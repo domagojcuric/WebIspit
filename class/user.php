@@ -21,6 +21,11 @@ class users{
        $this->conn->query($data) ;
        return true;
     }
+    
+    public function url($url)
+       {
+        header("location:".$url);
+       }
 }
 
 new user;
