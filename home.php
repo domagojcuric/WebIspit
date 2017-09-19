@@ -1,3 +1,16 @@
+<?php
+
+include 'class/users.php';
+$email=$_SESSION['email'];
+$profile=new users;
+$profile->users_profile($email);
+$profile->cat_shows();
+//print_r($profile->data);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +35,56 @@
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center>
+     
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4"><br>
+      <div id="select" class="tab-pane fade">
+ 
+      <select class="form-control" id="">
+      <option>select category's</option>
+      <?php    
+      foreach($profile->cat as $category)
+      {?>
+        <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
+        <?php  }?> 
+      </select>
+          
+          
+      </div>
+     </div>
+      <div class="col-sm-4"></div>
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>Pokaži profil</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      
+      
+      <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Sname</th>
+        <th>email</th>
+        <th>image</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+        <?php 
+        foreach ($profile->data as $prof)
+        {?>
+      <tr>
+        <td><?php echo $prof['id'];?></td>
+        <td><?php echo $prof['name'];?></td>
+        <td><?php echo $prof['surname'];?></td>
+        <td><?php echo $prof['email'];?></td>
+        <td><img src="img/<?php echo $prof['img'];?>" alt="" width="50px" height="50px"></td>
+     </tr>
+    </tbody>
+        <?php   }?>
+  </table>
+              
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3>Menu 2</h3>
