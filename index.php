@@ -50,8 +50,17 @@
 <br>
 <br>
             <div class="panel panel-info">
+                
                 <div class="panel-heading">Izradi račun</div>
                 <div class="panel-body">
+                    <?php 
+                    
+                    if(isset($_GET['run'])&& $_GET['run']=="success")
+                        {
+                            echo "<mark>Your registration successfully  done</mark>";
+                        }
+                    
+                    ?>
                     <form method="post"action="singup_sub.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Ime:</label>
@@ -66,11 +75,11 @@
                         <input type="email" class="form-control" name="e" id="email" placeholder="Unesi mail">
                     </div>
                     <div class="form-group">
-                        <label for="pwd">Password:</label>
+                        <label for="pwd">Lozinka:</label>
                         <input type="password" class="form-control" name="p" id="pwd" placeholder="Unesi lozinku">
                     </div>
                     <div class="form-group">
-                        <label for="image">Upload your image:</label>
+                        <label for="image">Dodaj sliku:</label>
                         <input type="file" class="form-control" name="img" id="file">
                     </div>
                         <button type="submit" class="btn btn-default">Potvrdi</button>
