@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 class users{
     public $host="localhost";
     public $username="root";
@@ -21,7 +21,21 @@ class users{
        $this->conn->query($data) ;
        return true;
     }
-    
+    public function signin($email,$pass)
+    {
+        $query=$this->conn->query("SELECT email,pass FROM signup WHERE email$email' AND pass='$pass'");
+        $usery->fetch_array(MYSQLI_ASSOC);
+        if ($query->num_rows>0)
+        {
+            $_SESSION['email']=$email;
+            return TRUE;
+        }
+        else 
+        {
+            return FALSE;
+        }
+            
+        }
     public function url($url)
        {
         header("location:".$url);
