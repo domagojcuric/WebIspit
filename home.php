@@ -41,16 +41,19 @@ $profile->cat_shows();
       <div class="col-sm-4"><br>
       <div id="select" class="tab-pane fade">
  
-      <select class="form-control" id="">
+      <form method="post" action="qus_show.php">
+      <select class="form-control" id="" name="cat">
       <option>select category's</option>
       <?php    
       foreach($profile->cat as $category)
       {?>
         <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
         <?php  }?> 
-      </select>
-          
-          
+      </select><br>
+      
+      <center><input type="submit" value="Potvrdi" class="btn btn-primary" /></center>
+      </form> 
+      
       </div>
      </div>
       <div class="col-sm-4"></div>
