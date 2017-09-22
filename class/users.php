@@ -9,6 +9,7 @@ class users{
     public $conn;
     public $data;
     public $cat;
+    public $qus;
     
     public function __construct()
     {
@@ -59,6 +60,47 @@ class users{
         }
         return $this->cat;
     }
+    public function qus_show($qus)
+    {
+        //echo $qus;
+        $query=$this->conn->query("SELECT * FROM questions WHERE cat_id='$qus'");
+        while($row=$query->fetch_array(MYSQLI_ASSOC))
+        {
+            $this->qus[]=$row;
+        }
+        return $this->qus;
+    }
+    
+    public function answer($data)
+    {
+        $ans= implode("", $data);
+        $right=0;
+        $wrong=0;
+        $no_answer=0;
+        $query=$this->conn->query("SELECT id,ans FROM questions WHERE cat_id='".$_SESSION['cat']."'");
+        while($qust=$query->fetch_array(MYSQLI_ASSOC))
+        {
+            if($qust['ans']==$_POST[$qust['id']])
+            {
+                $right++;
+            }
+            elseif($_POST[$qust['id']]=="no_attempt")
+            {
+                $no_answer++;
+            }
+            else
+            {
+                $wrong++;
+            }
+        }
+        $array=array();
+        $array['right']=$right;
+        $array['wrong']=$wrong;
+        $array['no_answer']=$no_answer;
+        return $array;
+        
+    }
+
     public function url($url)
        {
         header("location:".$url);
