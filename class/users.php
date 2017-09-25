@@ -10,6 +10,7 @@ class users{
     public $data;
     public $cat;
     public $qus;
+
     
     public function __construct()
     {
@@ -99,6 +100,12 @@ class users{
         $array['no_answer']=$no_answer;
         return $array;
         
+    }
+    
+    public function add_quiz($rec)
+    {
+        $a=$this->conn->query($rec);
+        return true;
     }
 
     public function url($url)
