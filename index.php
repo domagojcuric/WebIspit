@@ -33,9 +33,9 @@
                 <div class="panel-heading">Prijavi se</div>
                 <div class="panel-body">
                     <?php
-                    if(isset($_GET['run']) && $_GET['run']=="failed");
+                    if(isset($_GET['run']) && $_GET['run']=="failed") 
                     {
-                        echo"Your email or password is not corrct";
+                        echo "Your email or password is not corrct";
                     }
                     ?>
                     <form action="signin_sub.php" method="post">
