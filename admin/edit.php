@@ -107,7 +107,7 @@ if($_GET['id']) {
                 <td><input type="text" name="ans" placeholder="Contact" value="<?php echo $data['ans'] ?>" /></td>
             </tr>
             <tr>
-                <th>Category</th>
+                <th>Option4</th>
                 <td><input type="text" name="cat_id" placeholder="Contact" value="<?php echo $data['cat_id'] ?>" /></td>
             </tr>
             <tr>
