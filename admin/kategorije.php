@@ -74,6 +74,23 @@ include ("php_action/dbconn.php");
           </ul>
         </div>
         
+          <fieldset>
+                <h2>Dodaj kategoriju</h2>
+                <div>
+                <form action="php_action/create.php" method="post">
+                    <table>
+                        <tr>
+                            <th>Nova kategorija :</th>
+                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="Category" /></td>
+                        </tr>    
+                        <tr>
+                            <td><br> <button type="submit">Dodaj</button></td>
+                        </tr>
+                    </table>
+                </form>
+             </div>
+            </fieldset>
+          
           <div class="page-header">
             <h2>Pregled pitanja</h2>
           <table class="table table-hover">
@@ -90,7 +107,7 @@ include ("php_action/dbconn.php");
                         <td>".$row['id']."</td>
                         <td>".$row['cat_name']."</td>
                         <td>
-                            <a href='edit.php?id=".$row['id']."'><button type='button'>Edit</button></a>
+                            <a href='edit_cat.php?id=".$row['id']."'><button type='button'>Edit</button></a>
                             <a href='remove.php?id=".$row['id']."'><button type='button'>Remove</button></a>
                         </td>
                     </tr>";
@@ -103,23 +120,6 @@ include ("php_action/dbconn.php");
           </div>
           <br>
           <br>
-          
-          <fieldset>
-    <h2>Dodaj kategoriju</h2>
-    <div>
-    <form action="php_action/create.php" method="post">
-        <table>
-            <tr>
-                <th>New category :</th>
-                <td>&nbsp;<input type="text" name="cat_name" placeholder="Category" /></td>
-            </tr>    
-            <tr>
-                <td><br><br> <button type="submit">Save</button></td>
-            </tr>
-        </table>
-    </form>
- </div>
-</fieldset>
           
       </div>
     </div>

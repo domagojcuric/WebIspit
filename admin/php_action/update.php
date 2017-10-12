@@ -26,5 +26,5 @@ if($_POST) {
     $connect->close();
  
 }
- 
+
 ?>
