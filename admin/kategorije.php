@@ -1,9 +1,3 @@
-<?php
-include '../class/users.php';
-$cat=new users;
-$category=$cat->cat_shows();
-//print_r($category);
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,10 +51,10 @@ $category=$cat->cat_shows();
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-              <li class="active"><a href="index.php">Početna <span class="sr-only">(current)</span></a></li>
+              <li><a href="index.php">Početna</a></li>
               <li><a href="add_ques.php">Dodaj pitanaj</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li><a href="kategorije.php">Kategorije</a></li>
+              <li class="active"> <a href="kategorije.php">Kategorije<span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -94,4 +88,3 @@ $category=$cat->cat_shows();
     <script src="../js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-

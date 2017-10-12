@@ -60,6 +60,7 @@ $category=$cat->cat_shows();
             <li><a href="index.php">Početna</a></li>
               <li class="active"><a href="add_ques.php">Dodaj pitanja<span class="sr-only">(current)</span></a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
+              <li><a href="kategorije.php">Kategorije</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
