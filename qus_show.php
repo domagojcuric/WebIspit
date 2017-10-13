@@ -55,7 +55,7 @@ $_SESSION['cat']=$cat;
     <div class="col-sm-8">
         <h2>Online ispit IZ PHP-a 
             <script type="text/javascript"> 
-            var timeLeft=2*60;
+            var timeLeft=10*60;
             </script>
             
             <div id="time" style="float: right">timeout</div></h2>
