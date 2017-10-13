@@ -108,7 +108,7 @@ include ("php_action/dbconn.php");
                         <td>".$row['cat_name']."</td>
                         <td>
                             <a href='edit_cat.php?id=".$row['id']."'><button type='button'>Edit</button></a>
-                            <a href='remove.php?id=".$row['id']."'><button type='button'>Remove</button></a>
+                            <a href='remove_cat.php?id=".$row['id']."'><button type='button'>Remove</button></a>
                         </td>
                     </tr>";
                 }
