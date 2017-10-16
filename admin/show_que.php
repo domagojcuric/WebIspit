@@ -89,7 +89,7 @@ include ("php_action/dbconn.php");
             ?> 
               </table>
               
-              
+              <br><br>
               
               <h2>Pregled pitanja </h2>
           <table class="table table-hover">
