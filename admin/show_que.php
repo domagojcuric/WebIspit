@@ -56,47 +56,100 @@ include ("php_action/dbconn.php");
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
               <li><a href="index.php">Početna</a></li>
+              <li><a href="kategorije.php">Dodaj ispit</a></li>
               <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li class="active"><a href="show_que.php">Pregled pitanja<span class="sr-only">(current)</span></a></li>
-              <li><a href="kategorije.php">Kategorije</a></li>
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+          
           <div class="container">
-            <h2>Pregled pitanja</h2>
-          <table class="table table-hover">
-              <th>ID</th>
-              <th>Question </th>
-              <th>Option1</th>
-              <th>Option2</th>
-              <th>Option3</th>
-              <th>Option4</th>
-              <th>ANSWER(index from 1-4)</th>
+            <h2>Pregled Ispita </h2>
+              
+            <table class="table table-hover" >
+              <th>Šifra ispita</th>
+              <th>Naziv ispita</th>
+              
             <?php
-            $sql = "SELECT * FROM questions";
+            $sql = "SELECT * FROM category";
             $result = $connect->query($sql);
  
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>
                         <td>".$row['id']."</td>
-                        <td>".$row['question']."</td>
-                        <td>".$row['ans1']."</td>
-                        <td>".$row['ans2']."</td>
-                        <td>".$row['ans3']."</td>
-                        <td>".$row['ans4']."</td>
-                        <td>".$row['ans']."</td>
-                        <td>
-                            <a href='edit.php?id=".$row['id']."'><button type='button'>Edit</button></a>
-                            <a href='remove.php?id=".$row['id']."'><button type='button'>Remove</button></a>
-                        </td>
+                        <td>".$row['cat_name']."</td>
+                        
                     </tr>";
                 }
             } else {
                 echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
             }
             ?> 
+              </table>
+              
+              
+              
+              <h2>Pregled pitanja </h2>
+          <table class="table table-hover">
+              <th>ID</th>
+              <th>Pitanje </th>
+              <th>Odg 0</th>
+              <th>Odg 1</th>
+              <th>Odg 2</th>
+              <th>Odg 3</th>
+              <th>Odgovor(index od 0-3)</th>
+              <th>Šifra ispita</th>
+              <th>Action</th>
+            <?php
+            $sql = "SELECT * FROM questions";
+            $result = $connect->query($sql);
+ 
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['question'] ?></td>
+                        <td><?php echo $row['ans1'] ?></td>
+                        <td><?php echo $row['ans2'] ?></td>
+                        <td><?php echo $row['ans3'] ?></td>
+                        <td><?php echo $row['ans4'] ?></td>
+                        <td><?php echo $row['ans'] ?></td>
+                        <td><?php echo $row['cat_id'] ?></td>
+                        
+                        
+                        <td>
+                            <a href='edit.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
+                            <a onclick="return confirm('Želite li obrisati ovo pitanje')" href='show_que.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
+                        </td>
+                    </tr>
+              <?php  }
+            } else { ?>
+                 <tr><td colspan='5'><center>No Data Avaliable</center></td></tr>
+           <?php 
+            }
+            if(isset($_GET['id'])){
+                $id=$_GET['id'];
+                $result1=$connect->query("DELETE FROM questions WHERE id='$id'");
+                if($result1){
+                    ?>
+                    <script>
+                    alert("sucess to delete");
+                    window.location.href="show_que.php";
+                    </script>
+          <?php
+                }else{
+            ?> 
+          <script>
+          alert("FAIL to delete");
+          window.location.href="index.php";
+          </script>
+          <?php
+                }
+            }
+            ?>
           </table>
             </div>
         </div>

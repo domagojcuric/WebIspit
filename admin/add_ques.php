@@ -58,13 +58,15 @@ $category=$cat->cat_shows();
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="index.php">Početna</a></li>
-              <li class="active"><a href="add_ques.php">Dodaj pitanja<span class="sr-only">(current)</span></a></li>
-              <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li><a href="kategorije.php">Kategorije</a></li>
+            <li><a href="kategorije.php">Dodaj ispit</a></li>
+            <li class="active"><a href="add_ques.php">Dodaj pitanja<span class="sr-only">(current)</span></a></li>
+            <li><a href="show_que.php">Pregled pitanja</a></li>
+              
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dobro došli</h1>
+          
 
           <div class="table-responsive">
               <table class="table table-striped">
@@ -77,30 +79,30 @@ $category=$cat->cat_shows();
           ?>
                   <form method="post" action="add_quiz.php">
                           <div class="form-group">
-                            <label for="text">Question:</label>
-                            <input type="text" class="form-control" name="qus"  placeholder="Enter question">
+                            <label for="text">Pitanje:</label>
+                            <input type="text" class="form-control" name="qus"  placeholder="Unesi pitanje">
                           </div>
                           <div class="form-group">
-                            <label for="text">Option-1:</label>
-                            <input type="text" class="form-control" name="op1" placeholder="Enter option-1">
+                            <label for="text">Odgovor 0:</label>
+                            <input type="text" class="form-control" name="op1" placeholder="Unesi odgovor 0">
                           </div>
                           <div class="form-group">
-                            <label for="text">Option-2:</label>
-                            <input type="text" class="form-control" name="op2" placeholder="Enter option-2">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="text">Option-3:</label>
-                            <input type="text" class="form-control" name="op3" placeholder="Enter option-3">
+                            <label for="text">Odgovor 1:</label>
+                            <input type="text" class="form-control" name="op2" placeholder="Unesi odgovor 1">
                           </div>
 
                           <div class="form-group">
-                            <label for="text">Option-4:</label>
-                            <input type="text" class="form-control" name="op4" placeholder="Enter option-4">
+                            <label for="text">Odgovor 2:</label>
+                            <input type="text" class="form-control" name="op3" placeholder="Unesi odgovor 2">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="text">Odgovor 3:</label>
+                            <input type="text" class="form-control" name="op4" placeholder="Unesi odgovor 3">
                           </div>
                           <div class="form-group">
-                            <label for="text">answer:</label>
-                            <input type="text" class="form-control" name="ans" placeholder="Enter answer">
+                            <label for="text">Točan odgovor(riječima):</label>
+                            <input type="text" class="form-control" name="ans" placeholder="Unesi odgovor">
                           </div>
                             <div class="form-group" >
                                 <select class="form-control" id="sel1" name="cat">
@@ -116,7 +118,7 @@ $category=$cat->cat_shows();
                                   
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-default">Submit</button><br>
+                            <button type="submit" class="btn btn-success">Submit</button><br>
                 </form>
               </tbody>
             </table>

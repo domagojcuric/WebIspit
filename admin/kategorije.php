@@ -56,35 +56,27 @@ include ("php_action/dbconn.php");
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
               <li><a href="index.php">Početna</a></li>
-              <li><a href="add_ques.php">Dodaj pitanaj</a></li>
+              <li class="active"><a href="kategorije.php">Dodaj ispit<span class="sr-only">(current)</span></a></li>
+              <li><a href="add_ques.php">Dodaj pitanje</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li class="active"><a href="kategorije.php">Kategorije<span class="sr-only">(current)</span></a></li>
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <li><a href="index.php">Početna</a></li>
-              <li><a href="add_ques.php">Dodaj pitanja</a></li>
-              <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li class="active"><a href="kategorije.php">Kategorije<span class="sr-only">(current)</a></li>
-          </ul>
-        </div>
+          
+
         
           <fieldset>
-                <h2>Dodaj kategoriju</h2>
+                <h2>Dodaj Ispit</h2>
                 <div>
                 <form action="php_action/create.php" method="post">
                     <table>
                         <tr>
-                            <th>Nova kategorija :</th>
-                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="Category" /></td>
+                            <th>Naziv novog ispita :</th>
+                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="IME ISPITA" /></td>
                         </tr>    
                         <tr>
-                            <td><br> <button type="submit">Dodaj</button></td>
+                            <td><br> <button class="btn btn-success" type="submit">Dodaj</button></td>
                         </tr>
                     </table>
                 </form>
@@ -94,8 +86,8 @@ include ("php_action/dbconn.php");
           <div class="page-header">
             <h2>Pregled pitanja</h2>
           <table class="table table-hover">
-              <th>ID</th>
-              <th>Category </th>
+              <th>Šifra ispita</th>
+              <th>Ime ispita </th>
               <th>Action </th>
             <?php
             $sql = "SELECT * FROM category";
@@ -107,8 +99,8 @@ include ("php_action/dbconn.php");
                         <td>".$row['id']."</td>
                         <td>".$row['cat_name']."</td>
                         <td>
-                            <a href='edit_cat.php?id=".$row['id']."'><button type='button'>Edit</button></a>
-                            <a href='remove_cat.php?id=".$row['id']."'><button type='button'>Remove</button></a>
+                            <a href='edit_cat.php?id=".$row['id']."'><button class='btn btn-warning' type='button'>Edit</button></a>
+                            <a href='remove_cat.php?id=".$row['id']."'><button class='btn btn-danger' type='button'>Remove</button></a>
                         </td>
                     </tr>";
                 }

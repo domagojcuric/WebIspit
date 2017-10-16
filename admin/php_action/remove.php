@@ -7,8 +7,7 @@ if($_POST) {
  
     $sql = "DELETE FROM questions WHERE id = {$id}";
     if($connect->query($sql) === TRUE) {
-        echo "<p>Successfully removed!!</p>";
-        echo "<a href='../index.php'><button type='button'>Back</button></a>";
+        header('Location: http://localhost:8000/admin/show_que.php');
     } else {
         echo "Error updating record : " . $connect->error;
     }

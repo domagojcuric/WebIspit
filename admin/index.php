@@ -58,22 +58,20 @@ $category=$cat->cat_shows();
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
               <li class="active"><a href="index.php">Početna <span class="sr-only">(current)</span></a></li>
-              <li><a href="add_ques.php">Dodaj pitanaj</a></li>
+              <li><a href="kategorije.php">Dodaj ispit</a></li>
+              <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li><a href="kategorije.php">Kategorije</a></li>
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+          
 
-                <style class="adminpanel">
-    .adminpanel{width:500px; color: #999; margine:30px auto 0; padding:50px; border:1px solid #ddd;}
-</style>
-<div class="main">
-    <h1>Admin Panel</h1>
-    <div class="adminpanel">
-        <h2>Welcom to control panel</h2>
-        <p>You can manage your user and online exam system from here...</p>
+<div align="center">
+    <h1>Administracijska ploča</h1>
+    <div class="center-block">
+        <h2 align="center" >Dobrodošli </h2>
+        <p>Prijavljeni ste kao ADMIN,ovdje Vam je omogućeno dodavanje i uređivanje ispita</p>
     </div>
               
             

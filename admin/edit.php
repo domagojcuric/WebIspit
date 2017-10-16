@@ -67,55 +67,55 @@ if($_GET['id']) {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="index.php">Početna</a></li>
-              <li class="active"><a href="add_ques.php">Dodaj pitanja<span class="sr-only">(current)</span></a></li>
+              <li><a href="index.php">Početna</a></li>
+              <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
+              <li><a href="kategorije.php">Dodaj ispit</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dobro došli</h1>
+          
 
           <div class="table-responsive">
               <table class="table table-striped">
           <fieldset>
-    <legend>Edit question</legend>
+    <legend>Uredi pitanje</legend>
  
     <form action="php_action/update.php" method="post">
-        <table cellspacing="0" cellpadding="0">
+        <table class="table table-bordered">
             <tr>
-                <th>Question</th>
-                <td><input type="text" name="question" placeholder="First Name" value="<?php echo $data['question'] ?>" /></td>
+                <th>Pitanje</th>
+                <td><input type="text" name="question" placeholder="Pitanje" value="<?php echo $data['question'] ?>" /></td>
             </tr>     
             <tr>
-                <th>Option1</th>
-                <td><input type="text" name="ans1" placeholder="Last Name" value="<?php echo $data['ans1'] ?>" /></td>
+                <th>Odgovor 0</th>
+                <td><input type="text" name="ans1" placeholder="Odgovor 0" value="<?php echo $data['ans1'] ?>" /></td>
             </tr>
             <tr>
-                <th>Option2</th>
-                <td><input type="text" name="ans2" placeholder="Age" value="<?php echo $data['ans2'] ?>" /></td>
+                <th>Odgovor 1</th>
+                <td><input type="text" name="ans2" placeholder="Odgovor 1" value="<?php echo $data['ans2'] ?>" /></td>
             </tr>
             <tr>
-                <th>Option3</th>
-                <td><input type="text" name="ans3" placeholder="Contact" value="<?php echo $data['ans3'] ?>" /></td>
+                <th>Odgovor 2</th>
+                <td><input type="text" name="ans3" placeholder="Odgovor 2" value="<?php echo $data['ans3'] ?>" /></td>
             </tr>
             <tr>
-                <th>Option4</th>
-                <td><input type="text" name="ans4" placeholder="Contact" value="<?php echo $data['ans4'] ?>" /></td>
+                <th>Odgovor 3</th>
+                <td><input type="text" name="ans4" placeholder="Odgovor 3" value="<?php echo $data['ans4'] ?>" /></td>
             </tr>
             <tr>
-                <th>ANSWER</th>
-                <td><input type="text" name="ans" placeholder="Contact" value="<?php echo $data['ans'] ?>" /></td>
+                <th>Točan odgovor-indexiran</th>
+                <td><input type="text" name="ans" placeholder="Odgovor" value="<?php echo $data['ans'] ?>" /></td>
             </tr>
             <tr>
-                <th>Option4</th>
-                <td><input type="text" name="cat_id" placeholder="Contact" value="<?php echo $data['cat_id'] ?>" /></td>
+                <th>Šifra ispita</th>
+                <td><input type="text" name="cat_id" placeholder="Kategorija" value="<?php echo $data['cat_id'] ?>" /></td>
             </tr>
-            <tr>
-                <input type="hidden" name="id" value="<?php echo $data['id']?>" />
-                <td><button type="submit">Save Changes</button></td>
-                <td><a href="show_que.php"><button type="button">Back</button></a></td>
-            </tr>
+            
         </table>
+        <input type="hidden" name="id" value="<?php echo $data['id']?>" />
+        <button class='btn btn-success' type="submit">Save Changes</button>
+        <a href="show_que.php"><button class='btn btn-warning' type="button">Back</button></a>
     </form>
  
         </fieldset>
