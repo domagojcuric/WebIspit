@@ -41,6 +41,23 @@ class users{
         }
             
         }
+        
+        public function signinAdmin($username,$password)
+    {
+        $query=$this->conn->query("SELECT username,password FROM admin WHERE username='$username' AND password='$password'");
+        $query->fetch_array(MYSQLI_ASSOC);
+        if ($query->num_rows>0)
+        {
+            $_SESSION['username']=$username;
+            return TRUE;
+        }
+        else 
+        {
+            return FALSE;
+        }
+            
+        }
+        
     public function users_profile($email)
     {
         $query=$this->conn->query("SELECT * FROM signup WHERE email='$email'");
