@@ -51,6 +51,7 @@
                         <input type="password" class="form-control" name="p" id="password" placeholder="Unesi lozinku">
                     </div>
                         <button type="submit" class="btn btn-default">Potvrdi</button>
+                        <a href='index.php'><button class="btn btn-default" type='button'>Povratak</button></a>
                         
 		</form>
                 </div>
