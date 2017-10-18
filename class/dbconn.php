@@ -1,9 +1,18 @@
-<?php
-$mysqli= new mysqli('localhost','root','','quiz_oops');
-mysqli_set_charset($mysqli,'utf8');
-if(mysqli_connect_errno()){
-	echo "Pogreška<br>";
-	echo mysqli_connect_error();
-	exit;
+<?php 
+ 
+$localhost = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "quiz_oops"; 
+ 
+// create connection 
+$connect = new mysqli($localhost, $username, $password, $dbname); 
+ 
+// check connection 
+if($connect->connect_error) {
+    die("connection failed : " . $connect->connect_error);
+} else {
+    // echo "Successfully Connected";
 }
+ 
 ?>
