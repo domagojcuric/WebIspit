@@ -26,7 +26,7 @@ $profile->cat_shows();
 <div class="container">
   <h2>Online ispit</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Početna</a></li>
     <li><a data-toggle="tab" href="#menu1">Profil</a></li>
     <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
     <li style="float:right"><a data-toggle="tab" href="#menu3">Odjava</a></li>
@@ -34,16 +34,33 @@ $profile->cat_shows();
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
+        
+      <h2>Dobrodošli</h2> <br>
+      <p>Upute za pokretanje ispita:</p>
+      
+      <ol>
+          <li> Pritisni button "Pokreni ispit"</li>
+          <li> U padajućem izborniku odaberi ispit koji želiš riješavati</li>
+          <li> Zatim kada ste odabrali kliknite na button "Pokreni"</li>
+          
+      </ol>
+      <br><br><br>
+      
+      <h4>Napomena!!! Imate određeno vrijeme u kojem morate riješiti ispit. Timer se nalazi desno gore u kutu kada pokrenete ispit.
+      SRETNO</h4>
+      <br><br><br>
       <center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center>
      
       <div class="col-sm-4"></div>
+      
       <div class="col-sm-4"><br>
       <div id="select" class="tab-pane fade">
  
+             
+          
       <form method="post" action="qus_show.php">
       <select class="form-control" id="" name="cat">
-      <option>select category's</option>
+      <option>Odaberi ispit</option>
       <?php    
       foreach($profile->cat as $category)
       {?>
@@ -65,11 +82,11 @@ $profile->cat_shows();
       <table class="table">
     <thead>
       <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>Sname</th>
+        <th>Id</th>
+        <th>Ime</th>
+        <th>Prezime</th>
         <th>email</th>
-        <th>image</th>
+        <th>Slika profila</th>
       </tr>
     </thead>
     <tbody>
@@ -82,7 +99,7 @@ $profile->cat_shows();
         <td><?php echo $prof['name'];?></td>
         <td><?php echo $prof['surname'];?></td>
         <td><?php echo $prof['email'];?></td>
-        <td><img src="img/<?php echo $prof['img'];?>" alt="" width="50px" height="50px"></td>
+        <td><img src="img/<?php echo $prof['img'] ;?>" alt="" width="50px" height="50px"></td>
      </tr>
     </tbody>
         <?php   }?>
