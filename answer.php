@@ -66,6 +66,7 @@ $answer=$ans->answer($_POST);
   </table></div>
   <div class="col-sm-2"></div>
 </div>
+    <a href='view_ans.php'><button class="btn btn-success" type='button'>Pogledaj točne odgovore</button></a>
     
 </center>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
