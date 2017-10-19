@@ -60,7 +60,10 @@ $_SESSION['cat']=$cat;
             
             <div id="time" style="float: right">timeout</div></h2>
             <?php $i=1;
-            foreach ($qus->qus as $qust) {?> 
+            
+            foreach ($qus->qus as $qust) {
+                
+                ?> 
             <form method="post" id="form1" action="answer.php">
             <table class="table table-bordered">
               <thead>
