@@ -3,8 +3,7 @@
 include 'class/users.php';
 $ans=new users;
 $answer=$ans->answer($_POST);
-
-
+include 'class/dbconn.php';
 
 
 ?>
@@ -63,10 +62,60 @@ $answer=$ans->answer($_POST);
         ?></td>
       </tr>
     </tbody>
-  </table></div>
+  </table>
+     <table class="table table-hover">
+        <h2>Točni odgovori ovog testa</h2>
+        <th><center>Redni broj pitanja</center></th>
+     <th><center>Pitanje</center> </th>
+              
+              <th>Odgovori</th>
+              
+             
+            <?php
+            $sql = "SELECT * FROM questions";
+            $result = $connect->query($sql);
+            $i=1;
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    ?>
+              <tr class="success">
+                        <td><center><?php echo $i++ ?></center></td>
+                        <td><?php echo $row['question'] ?></td>
+                        
+                        <td><?php 
+                        if($row['ans'] == '0')
+                            {
+                            echo $row['ans1'];
+                            }
+                        else if($row['ans']=='1')
+                            {
+                            echo $row['ans2'];
+                            }
+                        else if ($row['ans']=='2')
+                            {
+                            echo $row['ans3'];
+                            }
+                        else
+                            {
+                             echo $row['ans4'];
+                            }
+                            ?>
+                        </td>
+                        
+                    </tr>
+              <?php  }
+            } else { ?>
+                 <tr><td colspan='5'><center>No Data Avaliable</center></td></tr>
+           <?php 
+            }?></table>
+    </div>
+    
+    
   <div class="col-sm-2"></div>
 </div>
-    <a href='view_ans.php'><button class="btn btn-success" type='button'>Pogledaj točne odgovore</button></a>
+    
+    
+    
     
 </center>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
