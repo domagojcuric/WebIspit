@@ -72,7 +72,7 @@ include 'class/dbconn.php';
               
              
             <?php
-            $sql = "SELECT * FROM questions";
+            $sql = "SELECT * FROM questions WHERE cat_id='".$_SESSION['cat']."'";
             $result = $connect->query($sql);
             $i=1;
             if($result->num_rows > 0) {
