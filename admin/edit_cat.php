@@ -87,12 +87,14 @@ if($_GET['id']) {
                 <th>Cat name</th>
                 <td><input type="text" name="cat_name" placeholder="Category name" value="<?php echo $data['cat_name'] ?>" /></td>
             </tr>     
-            <tr>
-                <input type="hidden" name="id" value="<?php echo $data['id']?>" />
-                <td><button type="submit">Save Changes</button></td>
-                <td><a href="show_que.php"><button type="button">Back</button></a></td>
-            </tr>
+            
+                
+            
         </table>
+        <br>
+        <input type="hidden" name="id" value="<?php echo $data['id']?>" />
+                <button class="btn btn-success" type="submit">Save Changes</button>
+                <a href="show_que.php"><button class='btn btn-warning' type="button">Back</button></a>
     </form>
  
         </fieldset>
