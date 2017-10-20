@@ -95,19 +95,41 @@ include ("php_action/dbconn.php");
  
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                        <td>".$row['id']."</td>
-                        <td>".$row['cat_name']."</td>
+                    ?>
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['cat_name'] ?></td>
                         <td>
-                            <a href='edit_cat.php?id=".$row['id']."'><button class='btn btn-warning' type='button'>Edit</button></a>
-                            <a href='remove_cat.php?id=".$row['id']."'><button class='btn btn-danger' type='button'>Remove</button></a>
+                            <a href='edit_cat.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
+                            <a onclick="return confirm('Želite li obrisati ovaj ispit')" href='kategorije.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
                         </td>
-                    </tr>";
-                }
-            } else {
-                echo "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
-            }
+                    </tr>
+                     <?php  }
+                
+            } else { ?>
+                <tr><td colspan='5'><center>No Data Avaliable</center></td></tr>
+          <?php 
+             }
+            if(isset($_GET['id'])){
+                $id=$_GET['id'];
+                $result1=$connect->query("DELETE FROM category WHERE id='$id'");
+                if($result1){
+                     ?>
+                    <script>
+                    alert("sucess to delete");
+                    window.location.href="kategorije.php";
+                    </script>
+                 <?php
+                }else{
             ?> 
+          <script>
+          alert("FAIL to delete");
+          window.location.href="index.php";
+          </script>
+          <?php
+                }
+            }
+            ?>
           </table>
           </div>
           <br>
@@ -118,8 +140,8 @@ include ("php_action/dbconn.php");
           
           
         </div>
-      </div>
-    </div>
+      
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
