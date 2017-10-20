@@ -68,9 +68,10 @@ if($_GET['id']) {
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
               <li><a href="index.php">Početna</a></li>
+              <li><a href="kategorije.php">Dodaj ispit</a></li>
               <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li><a href="kategorije.php">Dodaj ispit</a></li>
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

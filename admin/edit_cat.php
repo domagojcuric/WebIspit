@@ -68,9 +68,10 @@ if($_GET['id']) {
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="index.php">Početna</a></li>
-              <li><a href="add_ques.php">Dodaj pitanaj</a></li>
+            <li><a href="kategorije.php">Dodaj ispit</a></li>
+              <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
-              <li class="active"><a href="kategorije.php">Kategorije<span class="sr-only">(current)</span></a></li>
+              
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -79,13 +80,13 @@ if($_GET['id']) {
           <div class="table-responsive">
               <table class="table table-striped">
           <fieldset>
-    <legend>Edit Category</legend>
+    <legend>Uredi naziv ispita</legend>
  
     <form action="php_action/update_cat.php" method="post">
         <table cellspacing="0" cellpadding="0">
             <tr>
-                <th>Cat name</th>
-                <td><input type="text" name="cat_name" placeholder="Category name" value="<?php echo $data['cat_name'] ?>" /></td>
+                <th>Ime ispita : </th>
+                <td><input type="text" name="cat_name" placeholder="Naziv ispita" value="<?php echo $data['cat_name'] ?>" /></td>
             </tr>     
             
                 

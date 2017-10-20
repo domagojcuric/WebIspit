@@ -57,7 +57,7 @@ include ("php_action/dbconn.php");
           <ul class="nav nav-sidebar">
               <li><a href="index.php">Početna</a></li>
               <li class="active"><a href="kategorije.php">Dodaj ispit<span class="sr-only">(current)</span></a></li>
-              <li><a href="add_ques.php">Dodaj pitanje</a></li>
+              <li><a href="add_ques.php">Dodaj pitanja</a></li>
               <li><a href="show_que.php">Pregled pitanja</a></li>
               
           </ul>
