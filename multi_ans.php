@@ -6,12 +6,12 @@ if (isset($_POST)){
     
     $totalCorrect = 0;
     $answers = array(1 => array ('A','B'), 2 => array ('C','D'),3 => array ('A','B'), 4 => array ('C','D'),5 => array ('A','B'));
-    $count = 0;
+    $odg = 0;
     foreach ($answers as $ans) {
-    $count+= count($ans);
+    $odg+= count($ans);
     
 }
-    echo $count;
+    
     
     
     foreach ($answers as $num => $answer){
@@ -43,13 +43,14 @@ if (isset($_POST)){
         }
     }
     
-    $pct = round( (($totalCorrect/$count) * 100), 0);
-    echo ' Your result ('.$pct.'%)';
+    $pct = round( (($totalCorrect/$odg) * 100), 0);
+    
+    echo ' Tvoj rezultat ('.$pct.'%)';
     
 }
 ?>
  <?php
- 
+
 include 'class/dbconn.php';
 
             $sql = "SELECT * FROM questions";
@@ -91,3 +92,6 @@ include 'class/dbconn.php';
 
 </body>
 </html>
+
+
+<?php echo "ukupan broj odgovara ".$odg; ?>
