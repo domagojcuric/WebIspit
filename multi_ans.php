@@ -1,56 +1,3 @@
-<?php
-if (isset($_POST)){
-    //echo "<pre>";
-    //print_r($_POST);
-    //echo "</pre>";
-    
-    $totalCorrect = 0;
-    
-    $answers = array(1 => array ('1','2','4'), 2 => array ('1','2'),3 => array ('3','4'), 4 => array ('2','4'),5 => array ('3'));
-    $odg = 0;
-    foreach ($answers as $ans) {
-    $odg+= count($ans);
-    
-}
-    
-    
-    
-    foreach ($answers as $num => $answer){
-        
-    
-        $question = 'q'.$num;
-      
-        if(is_array($answer) && isset($_POST[$question])){
-            //traži odgovore
-            $matches = array_intersect($answer,$_POST[$question]);
-            $good_answers = count($matches);
-            //Brojanje promašaja
-            $bad_answers  = 0;
-            foreach($_POST[$question] as $post_answer){
-                if(!in_array($post_answer,$answer)){
-                    $bad_answers++;
-                }
-            }
-            //Oduzimanje dobrih i promašaja(da se ne bi stvorio minus)
-            if($good_answers > $bad_answers){ 
-                $result = $good_answers - $bad_answers;
-            }else{
-                $result = 0;
-            }
-            
-            $totalCorrect = $totalCorrect + $result;        
-        }elseif(isset($_POST[$question]) && strtolower($_POST[$question]) === strtolower($answer)){
-            $totalCorrect++;
-        }
-    }
-    
-    $pct = round( (($totalCorrect/$odg) * 100), 0);
-    
-    echo ' Tvoj rezultat ('.$pct.'%)';    
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +23,7 @@ include 'class/dbconn.php';
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()){
                     ?>
-    <form action="" method="post">
+        <form action="multi_ans_post.php" method="post">
         <br>
         <table class="table table-bordered">
         <thead>
