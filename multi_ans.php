@@ -35,16 +35,16 @@ include 'class/dbconn.php';
         
         
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo "q".$i;?>[]"  value="1"><?php  echo $row ['ans1'];?></td>
+        <td><input type="checkbox" name="<?php echo  $row['id'];?>[]"  value="1"><?php  echo $row ['ans1'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo "q".$i;?>[]"  value="2"><?php  echo $row ['ans2'];?></td>
+        <td><input type="checkbox" name="<?php echo  $row['id'];?>[]"  value="2"><?php  echo $row ['ans2'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo "q".$i;?>[]"  value="3"><?php  echo $row ['ans3'];?></td>
+        <td><input type="checkbox" name="<?php echo  $row['id'];?>[]"  value="3"><?php  echo $row ['ans3'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo "q".$i;?>[]"  value="4"><?php  echo $row ['ans4'];?></td>
+        <td><input type="checkbox" name="<?php echo  $row['id'];?>[]"  value="4"><?php  echo $row ['ans4'];?></td>
         </tr>
         </tbody>
     </table>
