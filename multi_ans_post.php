@@ -1,5 +1,21 @@
 <?php
 
+include 'class/dbconn.php';
+
+
+            $sql = "SELECT * FROM questions1";
+            $result = $connect->query($sql);
+            $answers=array();
+            if($result->num_rows > 0) 
+                {
+                while($row = $result->fetch_assoc())
+                        {
+                        $answers[$row['id']]=array($row['ans'][0],$row['ans'][1]);
+                        }
+                }
+                        
+                
+    
 
 if (isset($_POST)){
     //echo "<pre>";
@@ -10,11 +26,12 @@ if (isset($_POST)){
     
 
     
-    $answers = array(1 => array ('1','2','4'), 2 => array ('1','2'), 3 => array ('3','4'), 4 => array ('2','4'), 5 => array ('3'));
-
+    /*$answers1 = array(1 => array ('1','2'), 2 => array ('1','2'), 3 => array ('3','4'), 4 => array ('2','4'), 5 => array ('3','4'));
+    echo "<br>";
+    print_r($answers1);
+    echo "</br>";*/
     
     $count = 0;
-    
     foreach ($answers as $ans) 
     {
       $count+= count($ans);
@@ -22,10 +39,10 @@ if (isset($_POST)){
     
     
     
-    foreach ($answers as $num => $answer){
+    foreach ($answers as $row['id'] => $answer){
         
     
-        $question = 'q'.$num;
+        $question = $row['id'];
       
         if(is_array($answer) && isset($_POST[$question])){
             //traĹľi odgovore
@@ -53,6 +70,7 @@ if (isset($_POST)){
     
     $pct = round( (($totalCorrect/$count) * 100), 0);
     echo ' Tvoj rezultat ('.$pct.'%)';
+    
     
 }
 ?>
