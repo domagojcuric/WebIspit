@@ -9,7 +9,9 @@ class users{
     public $conn;
     public $data;
     public $cat;
+    public $cat_m;
     public $qus;
+    public $qus_m;
 
     
     public function __construct()
@@ -78,15 +80,34 @@ class users{
         }
         return $this->cat;
     }
+     public function cat_shows_m()
+    {
+        $query=$this->conn->query("SELECT * FROM category_multi");
+        while($row=$query->fetch_array(MYSQLI_ASSOC))
+        {
+            $this->cat_m[]=$row;
+        }
+        return $this->cat_m;
+    }
     public function qus_show($qus)
     {
         //echo $qus;
-        $query=$this->conn->query("SELECT * FROM questions WHERE cat_id='$qus'");
+        $query=$this->conn->query("SELECT * FROM questions1 WHERE cat_id='$qus'");
         while($row=$query->fetch_array(MYSQLI_ASSOC))
         {
             $this->qus[]=$row;
         }
         return $this->qus;
+    }
+        public function qus_show_m($qus_m)
+    {
+        //echo $qus;
+        $query=$this->conn->query("SELECT * FROM questions1 WHERE cat_id='$qus_m'");
+        while($row=$query->fetch_array(MYSQLI_ASSOC))
+        {
+            $this->qus_m[]=$row;
+        }
+        return $this->qus_m;
     }
     
     public function answer($data)
