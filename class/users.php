@@ -92,7 +92,7 @@ class users{
     public function qus_show($qus)
     {
         //echo $qus;
-        $query=$this->conn->query("SELECT * FROM questions1 WHERE cat_id='$qus'");
+        $query=$this->conn->query("SELECT * FROM questions WHERE cat_id='$qus'");
         while($row=$query->fetch_array(MYSQLI_ASSOC))
         {
             $this->qus[]=$row;
