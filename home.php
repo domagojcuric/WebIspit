@@ -5,6 +5,7 @@ $email=$_SESSION['email'];
 $profile=new users;
 $profile->users_profile($email);
 $profile->cat_shows();
+$profile->cat_shows_m();
 //print_r($profile->data);
 ?>
 
@@ -50,6 +51,7 @@ $profile->cat_shows();
       SRETNO</h4>
       <br><br><br>
       <center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center>
+      
      
       <div class="col-sm-4"></div>
       
@@ -63,6 +65,20 @@ $profile->cat_shows();
       <option>Odaberi ispit</option>
       <?php    
       foreach($profile->cat as $category)
+      {?>
+        <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
+        <?php  }?> 
+      </select><br>
+      
+      <center><input type="submit" value="Potvrdi" class="btn btn-primary" /></center>
+      </form> 
+      
+      <form method="post" action="multi_ans.php">
+      <br><br>
+      <select class="form-control" id="" name="cat_m">
+          <option>Odaberi ispit multiple</option>
+      <?php    
+      foreach($profile->cat_m as $category)
       {?>
         <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
         <?php  }?> 
