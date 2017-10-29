@@ -50,12 +50,13 @@ $profile->cat_shows_m();
       <h4>Napomena!!! Imate određeno vrijeme u kojem morate riješiti ispit. Timer se nalazi desno gore u kutu kada pokrenete ispit.
       SRETNO</h4>
       <br><br><br>
-      <center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center>
+      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center></div>
       
+      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select1">Pokreni ispit</button></center></div>
      
-      <div class="col-sm-4"></div>
       
-      <div class="col-sm-4"><br>
+      
+      <div class="col-sm-6"><br>
       <div id="select" class="tab-pane fade">
  
              
@@ -68,28 +69,32 @@ $profile->cat_shows_m();
       {?>
         <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
         <?php  }?> 
-      </select><br>
-      
+      </select>
+          <br>
       <center><input type="submit" value="Potvrdi" class="btn btn-primary" /></center>
       </form> 
+      </div>
+      </div>
       
-      <form method="post" action="multi_ans.php">
-      <br><br>
+      
+      <div class="col-sm-6">
+      <div id="select1" class="tab-pane fade">
+          <form method="post" action="multi_ans.php"><br>
       <select class="form-control" id="" name="cat_m">
-          <option>Odaberi ispit multiple</option>
+      <option>Odaberi ispit multiple</option>
       <?php    
-      foreach($profile->cat_m as $category)
+      foreach($profile->cat_m as $category1)
       {?>
-        <option value="<?php echo $category['id']; ?>"><?php echo $category['cat_name'];?> </option>
+        <option value="<?php echo $category1['id']; ?>"><?php echo $category1['cat_name'];?> </option>
         <?php  }?> 
-      </select><br>
-      
+      </select>
+              <br>
       <center><input type="submit" value="Potvrdi" class="btn btn-primary" /></center>
       </form> 
       
       </div>
      </div>
-      <div class="col-sm-4"></div>
+      
     </div>
     <div id="menu1" class="tab-pane fade">
       <h3>Pokaži profil</h3>
