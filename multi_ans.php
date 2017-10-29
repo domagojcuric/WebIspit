@@ -26,7 +26,7 @@ $_SESSION['cat_m']=$cat_m;
         <h2>Multiple odgovori</h2>
          <?php $i=1;
             
-            foreach ($qus_m->qus_m as $qust) {
+            foreach ($qus_m->qus_m as $qusta) {
                 
                 ?> 
         <form action="multi_ans_post.php" method="post">
@@ -34,23 +34,23 @@ $_SESSION['cat_m']=$cat_m;
         <table class="table table-bordered">
         <thead>
                <tr class="danger">
-                    <th><?php echo $i;?>.&nbsp<?php   echo $qust['question'];?></th>
+                    <th><?php echo $i;?>.&nbsp<?php   echo $qusta['question'];?></th>
                 </tr>
         </thead>
         <tbody>
         
         
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo $qust['id'];?>[]"  value="1"><?php  echo $qust ['ans1'];?></td>
+        <td><input type="checkbox" name="<?php echo $qusta['id'];?>[]"  value="1"><?php  echo $qusta ['ans1'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo  $qust['id'];?>[]"  value="2"><?php  echo $qust ['ans2'];?></td>
+        <td><input type="checkbox" name="<?php echo  $qusta['id'];?>[]"  value="2"><?php  echo $qusta ['ans2'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo  $qust['id'];?>[]"  value="3"><?php  echo $qust ['ans3'];?></td>
+        <td><input type="checkbox" name="<?php echo  $qusta['id'];?>[]"  value="3"><?php  echo $qusta ['ans3'];?></td>
         </tr>
         <tr class="info">
-        <td><input type="checkbox" name="<?php echo  $qust['id'];?>[]"  value="4"><?php  echo $qust ['ans4'];?></td>
+        <td><input type="checkbox" name="<?php echo  $qusta['id'];?>[]"  value="4"><?php  echo $qusta ['ans4'];?></td>
         </tr>
         </tbody>
     </table>
