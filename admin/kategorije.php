@@ -58,7 +58,8 @@ include ("php_action/dbconn.php");
               <li><a href="index.php">Početna</a></li>
               <li class="active"><a href="kategorije.php">Dodaj ispit<span class="sr-only">(current)</span></a></li>
               <li><a href="add_ques.php">Dodaj pitanja</a></li>
-              <li><a href="show_que.php">Pregled pitanja</a></li>
+              <li><a href="show_que.php">Pregled pitanja(single)</a></li>
+              <li><a href="show_que_multi.php">Pregled pitanja(multi)</a></li>
               
           </ul>
         </div>

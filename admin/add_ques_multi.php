@@ -1,7 +1,7 @@
 <?php
 include '../class/users.php';
-$cat=new users;
-$category=$cat->cat_shows();
+$cat_m=new users;
+$category=$cat_m->cat_shows_m();
 //print_r($category);
 ?>
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ $category=$cat->cat_shows();
             <li><a href="index.php">Početna</a></li>
             <li><a href="kategorije.php">Dodaj ispit</a></li>
             <li class="active"><a href="add_ques.php">Dodaj pitanja<span class="sr-only">(current)</span></a></li>
-            <li><a href="show_que.php">Pregled pitanja(single)</a></li>
+            <li><a href="show_que.php">Pregled pitanja</a></li>
             <li><a href="show_que_multi.php">Pregled pitanja(multi)</a></li>
               
               
@@ -78,35 +78,43 @@ $category=$cat->cat_shows();
           }
           
           ?>
-                  <form method="post" action="add_quiz.php">
+                  <form method="post" action="add_quiz_multi.php">
                           <div class="form-group">
                             <label for="text">Pitanje:</label>
                             <input type="text" class="form-control" name="qus"  placeholder="Unesi pitanje">
                           </div>
                           <div class="form-group">
-                            <label for="text">Odgovor 0:</label>
-                            <input type="text" class="form-control" name="op1" placeholder="Unesi odgovor 0">
-                          </div>
-                          <div class="form-group">
                             <label for="text">Odgovor 1:</label>
-                            <input type="text" class="form-control" name="op2" placeholder="Unesi odgovor 1">
+                            <input type="text" class="form-control" name="op1" placeholder="Unesi odgovor 1">
                           </div>
-
                           <div class="form-group">
                             <label for="text">Odgovor 2:</label>
-                            <input type="text" class="form-control" name="op3" placeholder="Unesi odgovor 2">
+                            <input type="text" class="form-control" name="op2" placeholder="Unesi odgovor 2">
                           </div>
 
                           <div class="form-group">
                             <label for="text">Odgovor 3:</label>
-                            <input type="text" class="form-control" name="op4" placeholder="Unesi odgovor 3">
+                            <input type="text" class="form-control" name="op3" placeholder="Unesi odgovor 3">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="text">Odgovor 4:</label>
+                            <input type="text" class="form-control" name="op4" placeholder="Unesi odgovor 4">
                           </div>
                           <div class="form-group">
-                            <label for="text">Točan odgovor(riječima):</label>
+                            <label for="text">Odgovor 5:</label>
+                            <input type="text" class="form-control" name="op5" placeholder="Unesi odgovor 5">
+                          </div>
+                          <div class="form-group">
+                            <label for="text">Točan odgovor 1(riječima):</label>
                             <input type="text" class="form-control" name="ans" placeholder="Unesi odgovor">
                           </div>
+                           <div class="form-group">
+                            <label for="text">Točan odgovor 2(riječima):</label>
+                            <input type="text" class="form-control" name="anss" placeholder="Unesi odgovor">
+                          </div>
                             <div class="form-group" >
-                                <select class="form-control" id="sel1" name="cat">
+                                <select class="form-control" id="sel1" name="cat_m">
                                     
                                     <option value="" disabled>choose category</option>
                                     <?php 

@@ -58,8 +58,8 @@ include ("php_action/dbconn.php");
               <li><a href="index.php">Početna</a></li>
               <li><a href="kategorije.php">Dodaj ispit</a></li>
               <li><a href="add_ques.php">Dodaj pitanja</a></li>
-              <li class="active"><a href="show_que.php">Pregled pitanja(single)<span class="sr-only">(current)</span></a></li>
-              <li><a href="show_que_multi.php">Pregled pitanja(multi)</a></li>
+              <li><a href="show_que.php">Pregled pitanja(single)</a></li>
+              <li class="active"><a href="show_que_multi.php">Pregled pitanja(multi)<span class="sr-only">(current)</span></a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -72,7 +72,7 @@ include ("php_action/dbconn.php");
               <th>Naziv ispita</th>
               
             <?php
-            $sql = "SELECT * FROM category";
+            $sql = "SELECT * FROM category_multi";
             $result = $connect->query($sql);
  
             if($result->num_rows > 0) {
@@ -95,15 +95,17 @@ include ("php_action/dbconn.php");
           <table class="table table-hover">
               <th>ID</th>
               <th>Pitanje </th>
-              <th>Odg 0</th>
               <th>Odg 1</th>
               <th>Odg 2</th>
               <th>Odg 3</th>
-              <th>Odgovor(index od 0-3)</th>
+              <th>Odg 4</th>
+              <th>Odg 5</th>
+              <th>Odgovor 1(index od 1-5)</th>
+              <th>Odgovor 2(index od 1-5)</th>
               <th>Šifra ispita</th>
               <th>Action</th>
             <?php
-            $sql = "SELECT * FROM questions";
+            $sql = "SELECT * FROM questions1";
             $result = $connect->query($sql);
  
             if($result->num_rows > 0) {
@@ -116,7 +118,9 @@ include ("php_action/dbconn.php");
                         <td><?php echo $row['ans2'] ?></td>
                         <td><?php echo $row['ans3'] ?></td>
                         <td><?php echo $row['ans4'] ?></td>
+                         <td><?php echo $row['ans5'] ?></td>
                         <td><?php echo $row['ans'] ?></td>
+                        <td><?php echo $row['anss'] ?></td>
                         <td><?php echo $row['cat_id'] ?></td>
                         
                         
@@ -132,12 +136,12 @@ include ("php_action/dbconn.php");
             }
             if(isset($_GET['id'])){
                 $id=$_GET['id'];
-                $result1=$connect->query("DELETE FROM questions WHERE id='$id'");
+                $result1=$connect->query("DELETE FROM questions1 WHERE id='$id'");
                 if($result1){
                     ?>
                     <script>
                     alert("sucess to delete");
-                    window.location.href="show_que.php";
+                    window.location.href="show_que_multi.php";
                     </script>
           <?php
                 }else{
@@ -168,5 +172,7 @@ include ("php_action/dbconn.php");
     <script src="../js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
+
+
 
 
