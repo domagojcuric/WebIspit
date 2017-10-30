@@ -98,7 +98,7 @@ $_SESSION['cat_m']=$cat_m;
         
         
         <div class="container">
-        <input type="submit" value="Submit" />
+        <input type="submit" class="btn btn-success" value="Potvrdi" />
         </div>
         
     </form>

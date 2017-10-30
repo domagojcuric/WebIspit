@@ -99,8 +99,12 @@ if (isset($_POST)){
       </thead>
       <tbody>
       <tr>
-        <td>Broj točnih odgovora </td>
+        <td>Broj točnih odgovora u ispitu </td>
         <td><?php echo $count; ?></td>
+      </tr>    
+      <tr>
+        <td>Broj točnih odgovora (riješenih) </td>
+        <td><?php echo $totalCorrect; ?></td>
       </tr>
       <tr>
         <td>Broj netočnih odgovora </td>

@@ -30,7 +30,7 @@ $profile->cat_shows_m();
     <li class="active"><a data-toggle="tab" href="#home">Početna</a></li>
     <li><a data-toggle="tab" href="#menu1">Profil</a></li>
     
-    <li style="float:right"><a data-toggle="tab" href="#menu3">Odjava</a></li>
+    <li style="float:right"><a href="logout.php">Odjava</a></li>
   </ul>
 
   <div class="tab-content">
