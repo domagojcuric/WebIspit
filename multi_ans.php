@@ -52,6 +52,9 @@ $_SESSION['cat_m']=$cat_m;
         <tr class="info">
         <td><input type="checkbox" name="<?php echo  $qusta['id'];?>[]"  value="4"><?php  echo $qusta ['ans4'];?></td>
         </tr>
+        <tr class="info">
+        <td><input type="checkbox" name="<?php echo  $qusta['id'];?>[]"  value="5"><?php  echo $qusta ['ans5'];?></td>
+        </tr>
         </tbody>
     </table>
          <?php $i++; } ?>

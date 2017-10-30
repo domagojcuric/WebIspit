@@ -10,7 +10,7 @@ include 'class/dbconn.php';
                 {
                 while($row = $result->fetch_assoc())
                         {
-                        $answers[$row['id']]=array($row['ans'][0],$row['ans'][1]);
+                        $answers[$row['id']]=array($row['ans'],$row['anss']);
                         }
                 }
                         
@@ -69,8 +69,61 @@ if (isset($_POST)){
     }
     
     $pct = round( (($totalCorrect/$count) * 100), 0);
-    echo ' Tvoj rezultat ('.$pct.'%)';
+    
     
     
 }
 ?>
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>answer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    
+    
+</head>
+<body>
+<center>
+    <div class="container">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8"><br><br>
+  <h2><?php echo ' Tvoj rezultat ('.$pct.'%)'; ?></h2>
+  <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>Ukupan broj pitanja</th>
+        <th><?php echo $row['id']; ?></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Broj točnih odgovora </td>
+        <td><?php echo $count; ?></td>
+      </tr>
+      <tr>
+        <td>Broj netočnih odgovora </td>
+        <td><?php echo $bad_answers; ?></td>
+      </tr>
+      </tbody>
+  </table>
+    
+  <a href='home.php'><button class="btn btn-warning" type='button'>Početna</button></a>
+  <a href='view_ans_multi.php'><button class="btn btn-success" type='button'>Pogledaj riješenja</button></a>
+ 
+ </div>
+    
+    
+  <div class="col-sm-2"></div>
+</div>
+    
+    
+    
+    
+</center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

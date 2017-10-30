@@ -29,7 +29,7 @@ $profile->cat_shows_m();
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Početna</a></li>
     <li><a data-toggle="tab" href="#menu1">Profil</a></li>
-    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    
     <li style="float:right"><a data-toggle="tab" href="#menu3">Odjava</a></li>
   </ul>
 
@@ -50,9 +50,9 @@ $profile->cat_shows_m();
       <h4>Napomena!!! Imate određeno vrijeme u kojem morate riješiti ispit. Timer se nalazi desno gore u kutu kada pokrenete ispit.
       SRETNO</h4>
       <br><br><br>
-      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit</button></center></div>
+      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select">Pokreni ispit (single)</button></center></div>
       
-      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select1">Pokreni ispit</button></center></div>
+      <div class="col-sm-6"><center><button type="button" class="btn btn-primary" data-toggle="tab" href="#select1">Pokreni ispit (multiple)</button></center></div>
      
       
       
