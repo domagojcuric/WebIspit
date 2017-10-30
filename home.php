@@ -63,7 +63,7 @@ $profile->cat_shows_m();
           
       <form method="post" action="qus_show.php">
       <select class="form-control" id="" name="cat">
-      <option>Odaberi ispit</option>
+          <option>Odaberi ispit</option>
       <?php    
       foreach($profile->cat as $category)
       {?>
