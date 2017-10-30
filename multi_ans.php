@@ -16,20 +16,54 @@ $_SESSION['cat_m']=$cat_m;
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   
+  <script type="text/javascript"> 
+  function timeout()
+  {
+      
+      var minute=Math.floor(timeLeft/60);
+      var second=timeLeft%60;
+      
+      var mint=checktime(minute);
+      var sec=checktime(second);
+      if(timeLeft<=0)
+      {
+          clearTimeout(tm);
+          document.getElementById("form2").submit();
+      }
+      else
+      {
+          document.getElementById("time").innerHTML=mint+":"+sec;
+      }
+      timeLeft--;
+      var tm= setTimeout(function(){timeout()},1000);
+  }
+  function checktime(msg)
+  {
+      if(msg<10)
+      {
+          msg="0"+msg;
+      }
+      return msg;
+  }
+  </script> 
 </head>
-<body>
+<body onload="timeout()">
     
     <div class="container">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <h2>Multiple odgovori</h2>
+        <h2>Multiple odgovori
+        <script type="text/javascript"> 
+            var timeLeft=1*60;
+            </script>
+            
+            <div id="time" style="float: right">timeout</div></h2>
          <?php $i=1;
             
             foreach ($qus_m->qus_m as $qusta) {
                 
                 ?> 
-        <form action="multi_ans_post.php" method="post">
+        <form action="multi_ans_post.php" id="form2" method="post">
         <br>
         <table class="table table-bordered">
         <thead>
