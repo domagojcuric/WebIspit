@@ -12,7 +12,7 @@ $answer= array_search($ans,$array);
 $query="INSERT INTO questions VALUES ('','$qus','$option1','$option2','$option3','$option4','$answer','$cat')";
 if($quiz->add_quiz($query))
 {
-    $quiz->url("index.php?msg=run");
+    $quiz->url("show_que.php?msg=run");
     //echo "data insert successfully";
 }
 
