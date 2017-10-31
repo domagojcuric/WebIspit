@@ -1,9 +1,11 @@
 <?php
-
+include 'class/users.php';
+$cat_m=new users();
+$cat_m=$_SESSION['cat_m'];
 include 'class/dbconn.php';
 
 
-            $sql = "SELECT * FROM questions1";
+            $sql = "SELECT * FROM questions1 WHERE cat_id='".$_SESSION['cat_m']."'";
             $result = $connect->query($sql);
             $answers=array();
             if($result->num_rows > 0) 
@@ -91,25 +93,20 @@ if (isset($_POST)){
     <div class="col-sm-8"><br><br>
   <h2><?php echo ' Tvoj rezultat ('.$pct.'%)'; ?></h2>
   <table class="table table-bordered">
+      
       <thead>
       <tr>
-        <th>Ukupan broj pitanja</th>
-        <th><?php echo $row['id']; ?></th>
-      </tr>
+        <th>Broj ukupnih točnih odgovora u ispitu </th>
+        <th><?php echo $count; ?></th>
+      </tr>    
       </thead>
       <tbody>
       <tr>
-        <td>Broj točnih odgovora u ispitu </td>
-        <td><?php echo $count; ?></td>
-      </tr>    
-      <tr>
-        <td>Broj točnih odgovora (riješenih) </td>
+        <td>Rezultat ispita (ako se označi krivi odgovor oduzimaju se bodovi) </td>
         <td><?php echo $totalCorrect; ?></td>
       </tr>
-      <tr>
-        <td>Broj netočnih odgovora </td>
-        <td><?php echo $bad_answers; ?></td>
-      </tr>
+      
+      
       </tbody>
   </table>
     
