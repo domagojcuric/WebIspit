@@ -75,7 +75,7 @@ include ("php_action/dbconn.php");
                     <table>
                         <tr>
                             <th>Naziv novog ispita :</th>
-                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="IME ISPITA" /></td>
+                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="Naziv ispita" /></td>
                         </tr>    
                         <tr>
                             <td><br> <button class="btn btn-success" type="submit">Dodaj</button></td>
