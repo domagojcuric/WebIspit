@@ -86,7 +86,7 @@ include ("php_action/dbconn.php");
             </fieldset>
           
           <div class="page-header">
-            <h2>Pregled pitanja</h2>
+            <h2>Pregled ispita</h2>
           <table class="table table-hover">
               <th>Šifra ispita</th>
               <th>Ime ispita </th>
