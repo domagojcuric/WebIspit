@@ -49,8 +49,12 @@ $category=$cat->cat_shows();
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="index.php">Admin panel</a>
+             </div>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="admin_logut.php">Odjava</a></li>
+            </ul>
         </div>
-      </div>
+     
     </nav>
 
     <div class="container-fluid">
