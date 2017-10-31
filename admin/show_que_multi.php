@@ -128,7 +128,7 @@ include ("php_action/dbconn.php");
                         
                         <td>
                             <a href='edit_multi.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
-                            <a onclick="return confirm('Želite li obrisati ovo pitanje')" href='show_que.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
+                            <a onclick="return confirm('Želite li obrisati ovo pitanje')" href='show_que_multi.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
                         </td>
                     </tr>
               <?php  }
