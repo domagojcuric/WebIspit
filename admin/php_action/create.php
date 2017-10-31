@@ -7,9 +7,7 @@ if($_POST) {
  
     $sql = "INSERT INTO category (cat_name) VALUES ('$cat_name')";
     if($connect->query($sql) === TRUE) {
-        echo "<p>New Record Successfully Created</p>";
-        echo "<a href='../create.php'><button type='button'>Back</button></a>";
-        echo "<a href='../index.php'><button type='button'>Home</button></a>";
+         header('Location: http://localhost:8000/admin/kategorije.php');
     } else {
         echo "Error " . $sql . ' ' . $connect->connect_error;
     }
