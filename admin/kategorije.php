@@ -56,10 +56,11 @@ include ("php_action/dbconn.php");
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
               <li><a href="index.php">Početna</a></li>
-              <li class="active"><a href="kategorije.php">Dodaj ispit<span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="kategorije.php">Dodaj ispit(single)<span class="sr-only">(current)</span></a></li>
               <li><a href="add_ques.php">Dodaj pitanja(single)</a></li>
-              <li><a href="add_ques_multi.php">Dodaj pitanja(multi)</a></li>
               <li><a href="show_que.php">Pregled pitanja(single)</a></li>
+              <li><a href="kategorije_multi.php">Dodaj ispit(multi)</a></li>
+              <li><a href="add_ques_multi.php">Dodaj pitanja(multi)</a></li>
               <li><a href="show_que_multi.php">Pregled pitanja(multi)</a></li>
               
           </ul>

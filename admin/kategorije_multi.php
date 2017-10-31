@@ -1,9 +1,7 @@
 <?php
-include '../class/users.php';
-$cat=new users;
-$category=$cat->cat_shows();
-//print_r($category);
+include ("php_action/dbconn.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,23 +47,19 @@ $category=$cat->cat_shows();
             <span class="icon-bar"></span>
           </button>
             <a class="navbar-brand" href="index.php">Admin panel</a>
-             </div>
-            <ul class="nav navbar-nav navbar-right">
-            <li><a href="admin_logut.php">Odjava</a></li>
-            </ul>
         </div>
-     
+      </div>
     </nav>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-              <li class="active"><a href="index.php">Početna <span class="sr-only">(current)</span></a></li>
+              <li><a href="index.php">Početna</a></li>
               <li><a href="kategorije.php">Dodaj ispit(single)</a></li>
               <li><a href="add_ques.php">Dodaj pitanja(single)</a></li>
               <li><a href="show_que.php">Pregled pitanja(single)</a></li>
-              <li><a href="kategorije_multi.php">Dodaj ispit(multi)</a></li>
+              <li class="active"><a href="kategorije_multi.php">Dodaj ispit(multi)<span class="sr-only">(current)</span></a></li>
               <li><a href="add_ques_multi.php">Dodaj pitanja(multi)</a></li>
               <li><a href="show_que_multi.php">Pregled pitanja(multi)</a></li>
               
@@ -74,18 +68,83 @@ $category=$cat->cat_shows();
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           
 
-<div align="center">
-    <h1>Administracijska ploča</h1>
-    <div class="center-block">
-        <h2 align="center" >Dobrodošli </h2>
-        <p>Prijavljeni ste kao ADMIN,ovdje Vam je omogućeno dodavanje i uređivanje ispita</p>
-    </div>
-              
-            
+        
+          <fieldset>
+                <h2>Dodaj Ispit</h2>
+                <div>
+                <form action="php_action/create_multi.php" method="post">
+                    <table>
+                        <tr>
+                            <th>Naziv novog ispita :</th>
+                            <td>&nbsp&nbsp;<input type="text" name="cat_name" placeholder="Naziv ispita" /></td>
+                        </tr>    
+                        <tr>
+                            <td><br> <button class="btn btn-success" type="submit">Dodaj</button></td>
+                        </tr>
+                    </table>
+                </form>
+             </div>
+            </fieldset>
+          
+          <div class="page-header">
+            <h2>Pregled ispita</h2>
+          <table class="table table-hover">
+              <th>Šifra ispita</th>
+              <th>Ime ispita </th>
+              <th>Action </th>
+            <?php
+            $sql = "SELECT * FROM category_multi";
+            $result = $connect->query($sql);
+ 
+            if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['cat_name'] ?></td>
+                        <td>
+                            <a href='edit_cat.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
+                            <a onclick="return confirm('Želite li obrisati ovaj ispit')" href='kategorije_multi.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
+                        </td>
+                    </tr>
+                     <?php  }
+                
+            } else { ?>
+                <tr><td colspan='5'><center>No Data Avaliable</center></td></tr>
+          <?php 
+             }
+            if(isset($_GET['id'])){
+                $id=$_GET['id'];
+                $result1=$connect->query("DELETE FROM category_multi WHERE id='$id'");
+                if($result1){
+                     ?>
+                    <script>
+                    alert("sucess to delete");
+                    window.location.href="kategorije_multi.php";
+                    </script>
+                 <?php
+                }else{
+            ?> 
+          <script>
+          alert("FAIL to delete");
+          window.location.href="index.php";
+          </script>
+          <?php
+                }
+            }
+            ?>
+          </table>
           </div>
-        </div>
+          <br>
+          <br>
+                 
       </div>
     </div>
+          
+          
+        </div>
+      
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -99,4 +158,3 @@ $category=$cat->cat_shows();
     <script src="../js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
-

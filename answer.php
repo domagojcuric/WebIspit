@@ -33,29 +33,29 @@ include 'class/dbconn.php';
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Total number of questions</th>
+        <th>Ukupni broj pitanja</th>
         <th><?php echo $total_qus; ?></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Attempted questions  </td>
+        <td>Odgovorena pitanja  </td>
         <td><?php echo $attempte_qus; ?></td>
       </tr>
       <tr>
-        <td>Right answer</td>
+        <td>Točni odgovori</td>
         <td><?php echo $answer['right']; ?></td>
       </tr>
       <tr>
-        <td>Wrong answer</td>
+        <td>Pogrešni odgovori</td>
         <td><?php echo $answer['wrong']; ?></td>
       </tr>
       <tr>
-        <td>No answer</td>
+        <td>Bez odgovora</td>
         <td><?php echo $answer['no_answer']; ?></td>
       </tr>
       <tr>
-        <td>Your result</td>
+        <td>Tvoj rezultat</td>
         <td><?php 
         $per=($answer['right']*100)/ ($total_qus);
         echo $per."%";
