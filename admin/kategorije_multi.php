@@ -103,7 +103,7 @@ include ("php_action/dbconn.php");
                         <td><?php echo $row['id'] ?></td>
                         <td><?php echo $row['cat_name'] ?></td>
                         <td>
-                            <a href='edit_cat.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
+                            <a href='edit_cat_multi.php?id=<?php echo $row['id'] ?>'><button class='btn btn-warning' type='button'>Edit</button></a>
                             <a onclick="return confirm('Želite li obrisati ovaj ispit')" href='kategorije_multi.php?id=<?php echo $row['id'] ?>'><button class='btn btn-danger' type='button'>Remove</button></a>
                         </td>
                     </tr>
