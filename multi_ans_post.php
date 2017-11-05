@@ -42,7 +42,23 @@ if (isset($_POST)){
     
     
     foreach ($answers as $row['id'] => $answer){
-        
+       
+       $aDoor = $_POST[$row['id']];
+          if(empty($aDoor)) 
+            {
+        echo("Nisi odabrao odgovor");
+            } 
+            else
+        {
+        $N = count($aDoor);
+        echo "<br>";
+        echo $row['id']." Pitanje : Odabrao si  $N odgovor/a: ";
+         
+        foreach ($aDoor as $ans)
+        {
+          echo $ans." " ;
+        }
+    }
     
         $question = $row['id'];
       
@@ -75,6 +91,22 @@ if (isset($_POST)){
     
     
 }
+ 
+  /*$aDoor = $_POST[$row['id']];
+  if(empty($aDoor)) 
+  {
+        echo("Nisi odabrao odgovor");
+  } 
+  else
+  {
+    $N = count($aDoor);
+
+    echo("Odabrao si  $N odgovora a to su: ");
+    foreach ($aDoor as $ans)
+    {
+      echo $ans." " ;
+    }
+  } */
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
