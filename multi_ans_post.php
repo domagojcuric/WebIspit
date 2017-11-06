@@ -43,7 +43,7 @@ if (isset($_POST)){
     
     foreach ($answers as $row['id'] => $answer){
        
-       $aDoor = $_POST[$row['id']];
+       /*$aDoor = $_POST[$row['id']];
           if(empty($aDoor)) 
             {
         echo("Nisi odabrao odgovor");
@@ -59,7 +59,7 @@ if (isset($_POST)){
           echo $ans." " ;
         }
     }
-    
+    */
         $question = $row['id'];
       
         if(is_array($answer) && isset($_POST[$question])){
@@ -136,6 +136,27 @@ if (isset($_POST)){
       <tr>
         <td>Rezultat ispita (ako se označi krivi odgovor oduzimaju se bodovi) </td>
         <td><?php echo $totalCorrect; ?></td>
+      </tr>
+      <tr>
+        <td>Tvoji odgovori </td>
+        <td><?php     foreach ($answers as $row['id'] => $answer){
+       
+       $aDoor = $_POST[$row['id']];
+          if(empty($aDoor)) 
+            {
+        echo("Nisi odabrao odgovor");
+            } 
+            else
+        {
+        $N = count($aDoor);
+        echo "<br>";
+        echo $row['id'].". Pitanje : Odabrao si  $N odgovor/a: ";
+         
+        foreach ($aDoor as $ans)
+        {
+          echo $ans." " ;
+        }
+        }} ?></td>
       </tr>
       
       
