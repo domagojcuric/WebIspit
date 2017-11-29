@@ -53,7 +53,7 @@ $_SESSION['cat']=$cat;
 <div class="container">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <h2>Online ispit IZ PHP-a 
+        <h2>Online ispit
             <script type="text/javascript"> 
             var timeLeft=10*60;
             </script>
