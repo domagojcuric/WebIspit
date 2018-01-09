@@ -150,7 +150,7 @@ if (isset($_POST)){
         {
         $N = count($aDoor);
         echo "<br>";
-        echo $row['id'].". Pitanje : Odabrao si  $N odgovor/a: ";
+        echo $row['id'].". Pitanje:Odabrao si  $N odgovor/a: ";
          
         foreach ($aDoor as $ans)
         {

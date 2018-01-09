@@ -16,7 +16,7 @@ $answer1=$answer1+1;
 $query="INSERT INTO questions1 VALUES ('','$qus','$option1','$option2','$option3','$option4','$option5','$answer','$answer1','$cat_m')";
 if($quiz_m->add_quiz($query))
 {
-    $quiz_m->url("show_que.php?msg=run");
+    $quiz_m->url("show_que_multi.php?msg=run");
     //echo "data insert successfully";
 }
 
