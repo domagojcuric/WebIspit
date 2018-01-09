@@ -29,7 +29,7 @@
         <div class="col-sm-4"><br><br><br>
             <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/95188-200.png"/>
                     
-            <h6 ><a href="adminlog.php">Prijavi se kao ADMIN</a></h6>
+            <h6 ><a href="adminlog.php">Prijavi se kao ADMIN budi glup</a></h6>
 	</div> 
 	<div class="col-sm-4"><br>
 <br>

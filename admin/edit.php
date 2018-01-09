@@ -9,6 +9,7 @@ if($_GET['id']) {
     $result = $connect->query($sql);
  
     $data = $result->fetch_assoc();
+    
  
     $connect->close();
  
